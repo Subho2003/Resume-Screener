@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1b1e 0%, #2d1b31 100%);
+  color: white;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-animation 5s ease infinite;
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, #2a2a2a 0%, #383838 100%);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: top;
+  overflow: hidden;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+  border-radius: 0.5rem;
+  z-index: -1;
+  animation: gradient-animation 5s ease infinite;
+}
+
+.upload-area-hover {
+  background: linear-gradient(45deg, rgba(78, 205, 196, 0.1), rgba(69, 183, 209, 0.1));
+  border-color: #4ecdc4;
+}
+
+/* Smooth toggle transitions */
+.mode-toggle-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.mode-toggle-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 500ms, transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mode-toggle-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.mode-toggle-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 500ms, transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Toggle switch animation */
+.toggle-switch {
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-switch-thumb {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.toggle-text {
+  transition: color 0.3s ease-in-out;
+}
+
+/* Upload box animations */
+.upload-box-container {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  grid-column: auto;
+}
+
+.upload-box-container.expanded {
+  grid-column: span 2;
+}
+
+.upload-box-content {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.upload-box-content.collapsed {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Grid animation */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  transition: grid-template-columns 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1b1e 0%, #2d1b31 100%);
+  color: white;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-animation 5s ease infinite;
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, #00f7ff 0%, #ff6b6b 100%);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left;
+  overflow: hidden;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+  border-radius: 0.5rem;
+  z-index: -1;
+  animation: gradient-animation 5s ease infinite;
+}
+
+.upload-area-hover {
+  background: linear-gradient(45deg, rgba(78, 205, 196, 0.1), rgba(69, 183, 209, 0.1));
+  border-color: #4ecdc4;
+}
+
+/* Smooth toggle transitions */
+.mode-toggle-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.mode-toggle-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 500ms, transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mode-toggle-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mode-toggle-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 500ms, transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Toggle switch animation */
+.toggle-switch {
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-switch-thumb {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.toggle-text {
+  transition: color 0.3s ease-in-out;
+}
+
+/* Upload box animations */
+.upload-box-container {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  grid-column: auto;
+  transform-origin: left;
+}
+
+.upload-box-container.expanded {
+  grid-column: span 2;
+}
+
+.upload-box-content {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.upload-box-content.collapsed {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+/* Grid animation */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+
+@keyframes gradient-x {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 5s ease infinite;
+}
+
+#jobCategory {
+  outline: white 1px solid;
+}
