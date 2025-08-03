@@ -1,1 +1,3 @@
 uploads
+Backend/__pycache__
+Backend/saved_ats/tfidf_matrix.npy
